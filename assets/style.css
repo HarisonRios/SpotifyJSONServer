@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: #1f1f1f;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.spotify-logo {
+  width: 160px;
+  height: auto;
+}
+
+.form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #b3b3b3;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1db954;
+  background: #333;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  margin-top: 20px;
+}
+
+button {
+  background: #1db954;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: #1ed760;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 100px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.section-title {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.album-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.album-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  background: #1a1a1a;
+  transition: background 0.2s;
+  cursor: pointer;
+  border-bottom: 1px solid #2a2a2a;
+  min-height: 120px;
+}
+
+.album-item:hover {
+  background: #2a2a2a;
+}
+
+.album-item:last-child {
+  border-bottom: none;
+}
+
+.album-artwork {
+  position: relative;
+  width: 140px;
+  height: 90px;
+  margin-right: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.album-cover {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+  z-index: 2;
+  position: relative;
+}
+
+.album-vinil {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 90px;
+  height: 90px;
+  z-index: 1;
+  transition: all 0.4s ease;
+  opacity: 0.8;
+}
+
+.album-item:hover .album-vinil {
+  transform: translateX(25px) rotate(180deg);
+  opacity: 1;
+}
+
+.album-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.album-name {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-artist {
+  color: #b3b3b3;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-id {
+  color: #666;
+  font-size: 14px;
+  min-width: 80px;
+  text-align: right;
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+
+  .buttons {
+    margin-top: 15px;
+    flex-direction: column;
+  }
+
+  .album-item {
+    padding: 20px 16px;
+  }
+
+  .album-artwork {
+    width: 120px;
+    height: 80px;
+    margin-right: 16px;
+  }
+
+  .album-cover {
+    width: 80px;
+    height: 80px;
+  }
+
+  .album-vinil {
+    width: 80px;
+    height: 80px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #535353;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
